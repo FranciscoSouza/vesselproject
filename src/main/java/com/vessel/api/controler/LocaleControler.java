@@ -1,42 +1,66 @@
 package com.vessel.api.controler;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vessel.api.message.Response;
-import com.vessel.api.model.Locale;
-import com.vessel.api.model.Position;
+import com.vessel.api.model.TimeZones;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+
 import com.vessel.api.repository.LocaleRepository;
 
 @RestController
 public class LocaleControler {
 	@Autowired
 	LocaleRepository repository;
-	Locale locale;
+	
+	@Autowired
+    protected JdbcTemplate jdbc;
 	
 	
 	@RequestMapping("/timeForLatLng")
 	public Response timeForLatLng(@RequestParam("lng") String lng,@RequestParam("lat") String lat){
 		
-		Position pos1 = new Position();
-		pos1.setTimeZoneName("TimeZone1");
+		TimeZones pos1 =jdbc.queryForObject("SELECT t.gid,t.places,t.time_zone, t.zone FROM timezones t WHERE ST_Intersects(ST_GeomFromText('POINT("+lat+"  "+lng+" )', 4326), geom)",userMapper); 
 		
-		Position pos2 = new Position();
-		pos2.setTimeZoneName("TimeZone2");
-		
-		ArrayList<Position> responseList = new ArrayList<Position>();
-		responseList.add(pos1);
-		//responseList.add(pos2);
-		
-		return new Response("Done", responseList);
+		return new Response("Done", pos1);
 	}
+	
+	private final RowMapper<TimeZones> userMapper = new RowMapper<TimeZones>() {
+        public TimeZones mapRow(ResultSet rs, int rowNum) throws SQLException {
+        	TimeZones tz = new TimeZones();
+        	tz.setId(rs.getLong("gid"));
+        	tz.setTimeZoneName(rs.getString("places"));
+        	tz.setOffSetText(rs.getString("time_zone"));
+        	tz.setOffSet(rs.getDouble("zone"));
+        	tz.setCurrentLocalTime(getCurrentDateTime());
+        	tz.setCurrentUTCTime(getCurrentUTCTime(rs.getDouble("zone")));
+            return tz;
+        }
 
+		
+    };
+
+    private String getCurrentDateTime(){
+		return new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
+    }
+    
+    private String getCurrentUTCTime(Double d) {
+    	Calendar cal = Calendar.getInstance(); // creates calendar
+        cal.setTime(new Date()); // sets calendar time/date
+        cal.add(Calendar.HOUR_OF_DAY, d.intValue()); // adds one hour
+        cal.getTime();
+        
+        return new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(cal.getTime());
+	}
 	
 }
