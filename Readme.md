@@ -6,8 +6,8 @@ VesselAPi project has the main focus to provide an webservice that returns the n
 database. The timezones are stored as polygons and for each time zone
 there is some additional information (name, UTC offset etc.)
 
-- Application should run standalone, so no Application server should be
-needed to run it. 
+- The Application runs standalone using the Spring Boot Framework
+
 Spring Boot
 http://projects.spring.io/spring-boot/
 
@@ -26,6 +26,10 @@ PostGis - Install with App http://www.bostongis.com/PrinterFriendly.aspx?content
 # Architecture
 
 ![architeture](img/vessel.png) 
+
+database application properties connection
+![properties](img/properties.png) 
+
 
 ## Query to get data
 
@@ -58,7 +62,6 @@ http://localhost:8080/timeForLatLng?lat=53.5&lng=10.4
 
 
 - Calling API some postservice (PostMan)
-
 ![result](img/result2.png) 
 
 
