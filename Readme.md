@@ -124,6 +124,13 @@ Was coded three tests scenarios using JUnit framework:
 Clone the project from gitHub and create a projet on eclipse.
 Run the application Boot.java
 
+If you prefer you can run the maven command bellow
+
+```sh
+mvn spring-boot:run
+```
+
+
 # How to test
 - Get some some latitude and longitude examples using the site http://mygeoposition.com/
 - Hit the URL http://localhost:8080/ on webbrowser and provide the latitude and longitude data. After that, this the button Submit.
