@@ -27,6 +27,23 @@ PostGis - Install with App http://www.bostongis.com/PrinterFriendly.aspx?content
 
 ![architeture](img/vessel.png) 
 
+## Query to get data
+
+I used the function ST_Intersects which checks if a given piece of geometry (our point) shares any space with another piece.
+![get data](img/data.png) 
+
+## Problem to get data
+Iniatially I was considering to use a custon query on LocaleRepository.java that extends Repository spring. This strategy is good to save time for many methods that don't need to be coded again (findById, getId, etc) and in my case, brings the possibility to write a custon query. But I faced some problems due a complex query that use some postgis extension.
+
+![get data](img/coderepository.png) 
+
+Due this problem I decided to use the 'brute force' and get data using the JDBC query (the same query)
+![get data](img/controler.png) 
+
+
+More details about PostGis and Timezone can find in this site
+http://shisaa.jp/postset/postgis-and-postgresql-in-action-timezones.html
+
 # Install
 Clone the project from gitHub and create a projet on eclipse.
 Run the application Boot.java

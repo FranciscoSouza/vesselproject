@@ -46,8 +46,6 @@ public class LocaleControler {
         	tz.setCurrentUTCTime(getCurrentUTCTime(rs.getDouble("zone")));
             return tz;
         }
-
-		
     };
 
     private String getCurrentDateTime(){
