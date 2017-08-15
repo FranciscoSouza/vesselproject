@@ -30,9 +30,10 @@ Clone the project from gitHub and create a projet on eclipse.
 Run the application Boot.java
 
 # How to test
--Get some some latitude and longitude using the site http://mygeoposition.com/
--Hit the URL http://localhost:8080/ on webbrowser and provide the latitude and longitude data. After that, this the button Submit.
--Calling API some postservice (PostMan)
+- Get some some latitude and longitude using the site http://mygeoposition.com/
+- Hit the URL http://localhost:8080/ on webbrowser and provide the latitude and longitude data. After that, this the button Submit.
+- Calling API some postservice (PostMan)
+
 Hit the URL on webbrowser informing the latitude and longitude
 http://localhost:8080/timeForLatLng?lat=53.5&lng=10.4
 
