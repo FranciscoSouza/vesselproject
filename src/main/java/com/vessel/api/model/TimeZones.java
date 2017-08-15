@@ -6,6 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * TimeZones Object
+ * @author fcarlos
+ *
+ */
 @Entity
 @Table(name = "timezones")
 public class TimeZones {
@@ -33,7 +38,15 @@ public class TimeZones {
 	}
 
 	
-
+	/**
+	 * TimeZones constructor with parameters 
+	 * @param id
+	 * @param timeZoneName
+	 * @param offSetText
+	 * @param offSet
+	 * @param currentLocalTime
+	 * @param currentUTCTime
+	 */
 	public TimeZones(Long id, String timeZoneName, String offSetText, Double offSet, String currentLocalTime,
 			String currentUTCTime) {
 		super();
@@ -96,15 +109,10 @@ public class TimeZones {
 	}
 
 
-
 	@Override
 	public String toString() {
 		return "TimeZones [timeZoneName=" + timeZoneName + ", offSetText=" + offSetText + ", currentLocalTime="
 				+ currentLocalTime + ", currentUTCTime=" + currentUTCTime + "]";
 	}
-
-	
-	
-	
 
 }

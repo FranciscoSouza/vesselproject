@@ -1,5 +1,10 @@
 package com.vessel.api.message;
 
+/**
+ * Response object
+ * @author fcarlos
+ *
+ */
 public class Response {
 	private String status;
 	private Object data;
@@ -13,6 +18,7 @@ public class Response {
 		this.data = data;
 	}
 
+	
 	public String getStatus() {
 		return status;
 	}

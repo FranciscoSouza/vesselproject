@@ -4,6 +4,11 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.vessel.api.model.TimeZones;
 
+/**
+ * Locale Repository
+ * @author fcarlos
+ *
+ */
 public interface LocaleRepository extends CrudRepository<TimeZones, Long> {
 
 	//@Query("SELECT timeZoneName,offSet FROM TimeZones WHERE ST_Intersects(ST_GeomFromText('POINT(:lat :lng)', 4326), geom)")
