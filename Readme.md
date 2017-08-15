@@ -66,7 +66,7 @@ database application properties connection
 }
 ```
 
-2) Not Found -  when the user informs an invalid lgn & lat
+3) Fail -  when the user informs an invalid lgn & lat
 
 ```sh
 {
@@ -135,6 +135,5 @@ http://localhost:8080/timeForLatLng?lat=53.5&lng=10.4
 
 - Calling API some postservice (PostMan)
 ![result](img/result2.png) 
-
 
 
