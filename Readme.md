@@ -25,6 +25,8 @@ PostGis - Install with App http://www.bostongis.com/PrinterFriendly.aspx?content
 
 # Architecture
 
+![architeture](img/vessel.png) 
+
 # Install
 Clone the project from gitHub and create a projet on eclipse.
 Run the application Boot.java
