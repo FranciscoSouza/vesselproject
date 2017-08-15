@@ -117,7 +117,7 @@ Was coded three tests scenarios using JUnit framework:
 
 ![tests](img/tests.png) 
 
-
+Important note: the VesselAPITest.java was moved out of the project due Maven compilation issues. If you need to run the tests, please return the file VesselAPITest.java to the folder /src/main/java/com/vessel/api and run using JUnit plugin on the eclipse
 
 
 # #Install
