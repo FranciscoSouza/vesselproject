@@ -40,11 +40,10 @@ http://shisaa.jp/postset/postgis-and-postgresql-in-action-timezones.html
 Iniatially I was considering to use a custon query on LocaleRepository.java that extends Repository spring. This strategy is good to save time for many methods that don't need to be coded again (findById, getId, etc) and in my case, brings the possibility to write a custon query. But I faced some problems due a complex query that use some postgis extension.
 
 Commented code about custon query 
-![get data](img/coderepository.png) 
+![repository](img/coderepository.png) 
 
 Due this problem I decided to use the 'brute force' and get data using the JDBC query (the same query)
-![get data](img/controller.png) 
-
+![controller](img/controller.png) 
 
 
 
@@ -53,9 +52,13 @@ Clone the project from gitHub and create a projet on eclipse.
 Run the application Boot.java
 
 # How to test
-- Get some some latitude and longitude using the site http://mygeoposition.com/
+- Get some some latitude and longitude examples using the site http://mygeoposition.com/
 - Hit the URL http://localhost:8080/ on webbrowser and provide the latitude and longitude data. After that, this the button Submit.
+![result](img/result1.png) 
+
+
 - Calling API some postservice (PostMan)
+![result](img/result2.png) 
 
 Hit the URL on webbrowser informing the latitude and longitude
 http://localhost:8080/timeForLatLng?lat=53.5&lng=10.4
