@@ -24,7 +24,7 @@ app.controller('postController', function($scope, $http, $location) {
 			$scope.postResultMessage = "Fail!";
 		});
 		
-		$scope.firstname = "";
-		$scope.lastname = "";
+		$scope.lat = "";
+		$scope.lng = "";
 	}
 });
