@@ -55,11 +55,13 @@ Due this problem I decided to use the 'brute force' and get data using the JDBC 
 
 Was coded three tests scenarios using JUnit framework:
 
-1)location Found
+1- location Found
 	Success that bring a valid position using the following data: lat=53.5&lng=10.4
-2)location Not Found
+
+2- location Not Found
 	Not Found location position using the following data: lat=1055&lng=115555
-3)location Error
+	
+3- location Error
 	Failed that bring a Invalid position, with lat=AAAA&lng=BBBB
 
 ![tests](img/tests.png) 

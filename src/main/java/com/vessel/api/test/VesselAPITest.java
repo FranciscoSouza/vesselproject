@@ -88,7 +88,7 @@ public class VesselAPITest {
 	public void locationNotFound() throws Exception {
 		mockMvc.perform(get(BASE_URL + "/timeForLatLng?lat=1055&lng=115555"))
 			.andExpect(jsonPath("$.status", is("Not Found")));
-			
+	
 	}
 	
 	/**
