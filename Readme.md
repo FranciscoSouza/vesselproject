@@ -32,6 +32,57 @@ database application properties connection
 
 ![properties](img/properties.png) 
 
+## API returns
+
+1) Sucessful - when the user informs a valid lgn & lat
+
+```sh
+{
+    "status": "Done",
+    "data": {
+        "id": 67,
+        "timeZoneName": "Côte d'Ivoire, Ghana, Senegal, Morocco, Portugal (continental and Madeira), Spain (Canary Islands)",
+        "offSetText": "UTC±00:00",
+        "offSet": 0,
+        "currentLocalTime": "15/08/2017 11:36:55",
+        "currentUTCTime": "15/08/2017 11:36:55"
+    }
+}
+```
+
+2) Not Found -  when the user informs a valid lgn & lat but doens't exists
+
+```sh
+{
+    "status": "Not Found",
+    "data": {
+        "id": null,
+        "timeZoneName": null,
+        "offSetText": null,
+        "offSet": null,
+        "currentLocalTime": null,
+        "currentUTCTime": null
+    }
+}
+```
+
+2) Not Found -  when the user informs an invalid lgn & lat
+
+```sh
+{
+    "status": "Fail",
+    "data": {
+        "id": null,
+        "timeZoneName": null,
+        "offSetText": null,
+        "offSet": null,
+        "currentLocalTime": null,
+        "currentUTCTime": null
+    }
+}
+```
+
+
 
 ## Query to get data
 
@@ -60,7 +111,7 @@ Was coded three tests scenarios using JUnit framework:
 
 2- location Not Found
 	Not Found location position using the following data: lat=1055&lng=115555
-	
+
 3- location Error
 	Failed that bring a Invalid position, with lat=AAAA&lng=BBBB
 
