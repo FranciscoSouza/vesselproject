@@ -36,8 +36,7 @@ I used the function ST_Intersects which checks if a given piece of geometry (our
 More details about PostGis and Timezone can find in this site
 http://shisaa.jp/postset/postgis-and-postgresql-in-action-timezones.html
 
-## Problem to get data
-Iniatially I was considering to use a custon query on LocaleRepository.java that extends Repository spring. This strategy is good to save time for many methods that don't need to be coded again (findById, getId, etc) and in my case, brings the possibility to write a custon query. But I faced some problems due a complex query that use some postgis extension.
+Initially, I was considering to use a custom query on LocaleRepository.java that extends Repository spring. This strategy is good to save time for many methods that don't need to be coded again (findById, getId, etc) and in my case, brings the possibility to write a custom query. But I faced some problems due a complex query that uses some postgis extension.
 
 Commented code about custon query 
 ![repository](img/coderepository.png) 
@@ -53,13 +52,14 @@ Run the application Boot.java
 
 # How to test
 - Get some some latitude and longitude examples using the site http://mygeoposition.com/
-- Hit the URL http://localhost:8080/ on webbrowser and provide the latitude and longitude data. After that, this the button Submit.
-![result](img/result1.png) 
+- Hit the URL http://localhost:8080/ on webbrowser and provide the latitude and longitude data. After that, this the button Submit.![result](img/result1.png) 
+Hit the URL on webbrowser informing the latitude and longitude
+http://localhost:8080/timeForLatLng?lat=53.5&lng=10.4
 
 
 - Calling API some postservice (PostMan)
+
 ![result](img/result2.png) 
 
-Hit the URL on webbrowser informing the latitude and longitude
-http://localhost:8080/timeForLatLng?lat=53.5&lng=10.4
+
 
