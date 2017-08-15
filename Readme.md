@@ -51,8 +51,23 @@ Due this problem I decided to use the 'brute force' and get data using the JDBC 
 ![controller](img/controller.png) 
 
 
+## Tests
 
-# Install
+Was coded three tests scenarios using JUnit framework:
+
+1)location Found
+	Success that bring a valid position using the following data: lat=53.5&lng=10.4
+2)location Not Found
+	Not Found location position using the following data: lat=1055&lng=115555
+3)location Error
+	Failed that bring a Invalid position, with lat=AAAA&lng=BBBB
+
+![tests](img/tests.png) 
+
+
+
+
+# #Install
 Clone the project from gitHub and create a projet on eclipse.
 Run the application Boot.java
 
