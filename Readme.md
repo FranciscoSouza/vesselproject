@@ -27,7 +27,9 @@ PostGis - Install with App http://www.bostongis.com/PrinterFriendly.aspx?content
 
 ![architeture](img/vessel.png) 
 
+
 database application properties connection
+
 ![properties](img/properties.png) 
 
 
@@ -56,7 +58,9 @@ Run the application Boot.java
 
 # How to test
 - Get some some latitude and longitude examples using the site http://mygeoposition.com/
-- Hit the URL http://localhost:8080/ on webbrowser and provide the latitude and longitude data. After that, this the button Submit.![result](img/result1.png) 
+- Hit the URL http://localhost:8080/ on webbrowser and provide the latitude and longitude data. After that, this the button Submit.
+
+![result](img/result1.png) 
 Hit the URL on webbrowser informing the latitude and longitude
 http://localhost:8080/timeForLatLng?lat=53.5&lng=10.4
 
