@@ -21,7 +21,7 @@ public class TimeZones {
     private Long id;  
 
 	
-	@Column(name="places")  
+	@Column(name="tz_name1st")  
 	private String timeZoneName;
 	
     @Column(name="time_zone")  

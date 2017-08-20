@@ -45,8 +45,8 @@ public class VesselAPITest {
 		
 		mockMvc.perform(get(BASE_URL + "/timeForLatLng?lat=53.5&lng=10.4"))
 			.andExpect(jsonPath("$.status", is("Done")))
-			.andExpect(jsonPath("$.data.timeZoneName", is("Mauritius, Oman, Seychelles, United Arab Emirates")))			
-            .andExpect(jsonPath("$.data.offSetText", is("UTC+04:00")));
+			.andExpect(jsonPath("$.data.timeZoneName", is("Europe/Paris")))			
+            .andExpect(jsonPath("$.data.offSetText", is("UTC+01:00")));
             
 	}
 	

@@ -42,7 +42,7 @@ public class LocaleControler {
 			Double.parseDouble(lat);
 			
 			// jdbc query 
-			pos1 =jdbc.queryForObject("SELECT t.gid,t.places,t.time_zone, t.zone FROM timezones t WHERE ST_Intersects(ST_GeomFromText('POINT("+lat+"  "+lng+" )', 4326), geom)",locationMapper); 
+			pos1 =jdbc.queryForObject("SELECT t.gid,t.time_zone, t.zone, t.tz_name1st FROM timezones t WHERE ST_Intersects(ST_GeomFromText('POINT("+lng+"  "+lat+" )', 4326), geom)",locationMapper); 
 			
 			return new Response("Done", pos1);
 			
@@ -61,7 +61,7 @@ public class LocaleControler {
         public TimeZones mapRow(ResultSet rs, int rowNum) throws SQLException {
         	TimeZones tz = new TimeZones();
         	tz.setId(rs.getLong("gid"));
-        	tz.setTimeZoneName(rs.getString("places"));
+        	tz.setTimeZoneName(rs.getString("tz_name1st"));
         	tz.setOffSetText(rs.getString("time_zone"));
         	tz.setOffSet(rs.getDouble("zone"));
         	tz.setCurrentLocalTime(getCurrentDateTime());
